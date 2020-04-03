@@ -1,11 +1,11 @@
 require 'pry'
 
-def get_first_name_of_season_winner(data, season)
-  winner_data = data[season].find do |contestant_hash|
-    contestant_hash["status"] == "Winner"
+def get_first_name_of_season_winner (data, season)
+  winner = data[season].find do |contestant|
+    contestant["status"] == "Winner"
   end
 
-  full_name = winner_data["name"]
+  full_name = winner["name"]
   full_name.split(/ /)[0]
 end
 
